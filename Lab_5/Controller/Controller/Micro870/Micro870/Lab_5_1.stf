@@ -1,0 +1,42 @@
+PROGRAM Lab_5_1
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*_IO_EM_DI_00*) (**)  XIO  [2,0] (*TON_3_AMBER_LIGHT.Q*) (*Q*)  FB  [3,0] (*TON*) (*TON_1_RED_LIGHT*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#0m15s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*TON_1_RED_LIGHT.Q*) (*Q*)  FB  [2,0] (*TON*) (*TON_2_GREEN_LIGHT*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#0m15s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  XIC  [1,0] (*TON_2_GREEN_LIGHT.Q*) (*Q*)  FB  [2,0] (*TON*) (*TON_3_AMBER_LIGHT*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#0m15s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  XIC  [1,0] (*TON_1_RED_LIGHT.Redge*) (*Redg*)  XIO  [2,0] (*TON_1_RED_LIGHT.Q*) (*Q*)  OTE  [3,0] (*_IO_EM_DO_00*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,12] (**) (**)  XIC  [1,0] (*TON_2_GREEN_LIGHT.Redge*) (*Redg*)  XIO  [2,0] (*TON_2_GREEN_LIGHT.Q*) (*Q*)  OTE  [3,0] (*_IO_EM_DO_01*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,14] (**) (**)  XIC  [1,0] (*TON_3_AMBER_LIGHT.Redge*) (*Redg*)  XIO  [2,0] (*TON_3_AMBER_LIGHT.Q*) (*Q*)  OTE  [3,0] (*_IO_EM_DO_02*) (**)
+EOR [4,0]
+EOF
+#end_info
+END_PROGRAM

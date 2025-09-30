@@ -1,0 +1,16 @@
+FUNCTION_BLOCK Lab4_3_OR
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*Enable*) (**)  
+ BST  XIC  [2,0] (*or2*) (**)
+   NXB  XIC  [2,1] (*or1*) (**)
+ BND
+  OTE  [3,0] (*Out*) (**)
+EOR [4,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

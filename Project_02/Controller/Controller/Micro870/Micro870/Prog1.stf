@@ -1,0 +1,32 @@
+PROGRAM Prog1
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  
+ BST  XIC  [1,0] (*_IO_EM_DI_00*) (**)
+   NXB  XIC  [1,1] (*Hold*) (**)
+ BND
+  XIC  [2,0] (*_IO_EM_DI_01*) (**)  
+ BST  OTE  [3,0] (*Hold*) (**)
+   NXB  OTE  [3,1] (*_IO_EM_DO_04*) (**)
+ BND
+
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*Hold*) (**)  XIO  [2,0] (*TON_1.Q*) (*Q*)  FB  [3,0] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#1s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  FB  [6,0] (*TOF*) (*TOF_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [9,0] (*_IO_EM_DO_03*) (**)
+EOR [10,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  XIO  [1,0] (*Hold*) (**)  OTE  [2,0] (*_IO_EM_DO_02*) (**)
+EOR [3,0]
+EOF
+#end_info
+END_PROGRAM

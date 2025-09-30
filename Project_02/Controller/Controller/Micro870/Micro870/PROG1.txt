@@ -1,0 +1,58 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := _IO_EM_DI_00 ;
+__EDTB2 := HOLD ;
+__EDTB3 := (__EDTB1 OR __EDTB2) AND _IO_EM_DI_01 ;
+HOLD := __EDTB3 ;
+_IO_EM_DO_04 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0001 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+TON_1(HOLD AND NOT(TON_1.Q), T#1S) ;
+(* FB call: TOF *)
+TOF_1(TON_1.Q, T#500MS) ;
+_IO_EM_DO_03 := TOF_1.Q ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0002 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_EM_DO_02 := NOT(HOLD) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0003 ;
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+

@@ -1,0 +1,109 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrAND *)
+Lab_4_3_1(TRUE, _IO_EM_DI_00, _IO_EM_DI_01) ;
+_IO_EM_DO_00 := Lab_4_3_1.Out ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0001 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,5
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrOR *)
+MrOR_1(TRUE, _IO_EM_DI_00, _IO_EM_DI_01) ;
+_IO_EM_DO_01 := MrOR_1.output ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0002 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,9
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrNOT *)
+MrNOT_1(TRUE, _IO_EM_DI_00) ;
+_IO_EM_DO_01 := MrNOT_1.VarOutput1 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0003 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,12
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrNAND *)
+MrNAND_1(TRUE, _IO_EM_DI_00, _IO_EM_DI_01) ;
+_IO_EM_DO_00 := MrNAND_1.VarOutput1 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0004 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrNOR *)
+MrNOR_1(TRUE, _IO_EM_DI_00, _IO_EM_DI_01) ;
+_IO_EM_DO_00 := MrNOR_1.VarOutput1 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0005 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,20
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrXOR *)
+MrXOR_1(TRUE, _IO_EM_DI_00, _IO_EM_DI_01) ;
+_IO_EM_DO_00 := MrXOR_1.VarOutput1 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0006 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,24
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: MrXNOR *)
+MrXNOR_1(TRUE, _IO_EM_DI_00, _IO_EM_DI_01) ;
+_IO_EM_DO_00 := MrXNOR_1.VarOutput1 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0007 ;
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+

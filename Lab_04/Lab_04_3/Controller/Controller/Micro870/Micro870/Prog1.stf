@@ -1,0 +1,48 @@
+PROGRAM Prog1
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*MrAND*) (*Lab_4_3_1*) ( (*Enable:*)(**) (**)  , (*and1:*)(*_IO_EM_DI_00*) (**)  , (*and2:*)(*_IO_EM_DI_01*) (**) ; (*Out:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_00*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  FB  [1,0] (*MrOR*) (*MrOR_1*) ( (*Enable:*)(**) (**)  , (*OR1:*)(*_IO_EM_DI_00*) (**)  , (*OR2:*)(*_IO_EM_DI_01*) (**) ; (*output:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_01*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*MrNOT*) (*MrNOT_1*) ( (*Enable:*)(**) (**)  , (*OR1:*)(*_IO_EM_DI_00*) (**) ; (*VarOutput1:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_01*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,12] (**) (**)  FB  [1,0] (*MrNAND*) (*MrNAND_1*) ( (*Enable:*)(**) (**)  , (*NAND1:*)(*_IO_EM_DI_00*) (**)  , (*NAND2:*)(*_IO_EM_DI_01*) (**) ; (*VarOutput1:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_00*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  FB  [1,0] (*MrNOR*) (*MrNOR_1*) ( (*Enable:*)(**) (**)  , (*NOR1:*)(*_IO_EM_DI_00*) (**)  , (*NOR2:*)(*_IO_EM_DI_01*) (**) ; (*VarOutput1:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_00*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,20] (**) (**)  FB  [1,0] (*MrXOR*) (*MrXOR_1*) ( (*Enable:*)(**) (**)  , (*XOR1:*)(*_IO_EM_DI_00*) (**)  , (*XOR2:*)(*_IO_EM_DI_01*) (**) ; (*VarOutput1:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_00*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,24] (**) (**)  FB  [1,0] (*MrXNOR*) (*MrXNOR_1*) ( (*enable:*)(**) (**)  , (*XNOR1:*)(*_IO_EM_DI_00*) (**)  , (*XNOR2:*)(*_IO_EM_DI_01*) (**) ; (*VarOutput1:*)(**) (**) )  OTE  [4,0] (*_IO_EM_DO_00*) (**)
+EOR [5,0]
+EOF
+#end_info
+END_PROGRAM

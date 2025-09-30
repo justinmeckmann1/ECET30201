@@ -1,0 +1,28 @@
+PROGRAM Lab_4_2
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIO  [1,0] (*_IO_EM_DI_01*) (**)  
+ BST  XIC  [2,0] (*_IO_EM_DI_00*) (**)
+   NXB  XIC  [2,1] (*LATCH*) (**)
+ BND
+  OTE  [3,0] (*LATCH*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*LATCH*) (**)  OTE  [2,0] (*_IO_EM_DO_00*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,6] (**) (**)
+EOR [1,0]
+EOF
+#end_info
+END_PROGRAM

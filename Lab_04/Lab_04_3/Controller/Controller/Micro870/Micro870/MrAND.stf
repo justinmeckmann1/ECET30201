@@ -1,0 +1,12 @@
+FUNCTION_BLOCK MrAND
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*Enable*) (**)  XIC  [2,0] (*and1*) (**)  XIC  [3,0] (*and2*) (**)  OTE  [4,0] (*Out*) (**)
+EOR [5,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

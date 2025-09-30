@@ -1,0 +1,16 @@
+FUNCTION_BLOCK MrNAND
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*Enable*) (**)  
+ BST  XIO  [2,0] (*NAND1*) (**)
+   NXB  XIO  [2,1] (*NAND2*) (**)
+ BND
+  OTE  [3,0] (*VarOutput1*) (**)
+EOR [4,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

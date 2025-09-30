@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectElements>
+  <AcfElementGuid Guid="234274a6-04c1-4069-8198-87c62797470d">
+    <File>MrOR.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="2d216d53-8331-4cb6-a751-a5300e3ed411">
+    <File>MrXOR.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="30098e87-af28-42ec-88a7-66904d6decf1">
+    <File>Lab_4_2.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="3452391a-492c-47a1-9b4a-6378d283182a">
+    <File>MrXNOR.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="40626ffd-0659-4565-bdd5-35fcd16ca869">
+    <File>MrAND.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="7f9d82ad-112a-4b90-b298-b750858391ea">
+    <File>Prog1.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="d133bfa1-f354-4749-8f79-af6da0f83c2e">
+    <File>MrNAND.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="d7a97efe-7315-423b-94ef-80b937e09c68">
+    <File>MrNOT.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="df7e560d-0b74-4302-97b4-dc4aa1b910dd">
+    <File>Lab_4_4.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="fcd9c4a6-6539-468c-b11b-1335f77b870e">
+    <File>MrNOR.AcfMlge</File>
+  </AcfElementGuid>
+</ProjectElements>

@@ -1,0 +1,86 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+TON_1_RED_LIGHT(_IO_EM_DI_00 AND NOT(TON_3_AMBER_LIGHT.Q), T#0M15S) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0001 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+TON_2_GREEN_LIGHT(TON_1_RED_LIGHT.Q, T#0M15S) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0002 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+TON_3_AMBER_LIGHT(TON_2_GREEN_LIGHT.Q, T#0M15S) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0003 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_EM_DO_00 := TON_1_RED_LIGHT.REDGE AND NOT(TON_1_RED_LIGHT.Q) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0004 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,12
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_EM_DO_01 := TON_2_GREEN_LIGHT.REDGE AND NOT(TON_2_GREEN_LIGHT.Q) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0005 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,14
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+_IO_EM_DO_02 := TON_3_AMBER_LIGHT.REDGE AND NOT(TON_3_AMBER_LIGHT.Q) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0006 ;
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+

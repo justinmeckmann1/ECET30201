@@ -1,0 +1,14 @@
+[BEGIN FB INPUTS]
+I1=micro870.micro870.lab_5_1/ton_1_red_light.in,0x1BFE,BOOL
+I2=micro870.micro870.lab_5_1/ton_1_red_light.pt,0x1C08,TIME
+I3=micro870.micro870.lab_5_1/ton_2_green_light.in,0x1BFE,BOOL
+I4=micro870.micro870.lab_5_1/ton_2_green_light.pt,0x1C08,TIME
+I5=micro870.micro870.lab_5_1/ton_3_amber_light.in,0x1BFE,BOOL
+I6=micro870.micro870.lab_5_1/ton_3_amber_light.pt,0x1C08,TIME
+I7=micro870.micro870.lab_5_2/redlight.in,0x1BFE,BOOL
+I8=micro870.micro870.lab_5_2/redlight.pt,0x1C0C,TIME
+I9=micro870.micro870.lab_5_2/greenlight.in,0x1BFE,BOOL
+I10=micro870.micro870.lab_5_2/greenlight.pt,0x1C0C,TIME
+I11=micro870.micro870.lab_5_2/amberlight.in,0x1BFE,BOOL
+I12=micro870.micro870.lab_5_2/amberlight.pt,0x1C10,TIME
+[END]

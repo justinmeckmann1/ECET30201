@@ -1,0 +1,16 @@
+FUNCTION_BLOCK MrXNOR
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*enable*) (**)  
+ BST  XIC  [2,0] (*XNOR1*) (**)  XIC  [3,0] (*XNOR2*) (**)
+   NXB  XIO  [2,1] (*XNOR1*) (**)  XIO  [3,1] (*XNOR2*) (**)
+ BND
+  OTE  [4,0] (*VarOutput1*) (**)
+EOR [5,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

@@ -1,0 +1,22 @@
+[BEGIN FB INPUTS]
+I1=micro870.micro870.prog1/lab_4_3_1.enable,0x444,BOOL
+I2=micro870.micro870.prog1/lab_4_3_1.and1,0x41E,BOOL
+I3=micro870.micro870.prog1/lab_4_3_1.and2,0x41F,BOOL
+I4=micro870.micro870.prog1/mrnor_1.enable,0x444,BOOL
+I5=micro870.micro870.prog1/mrnor_1.nor1,0x41E,BOOL
+I6=micro870.micro870.prog1/mrnor_1.nor2,0x41F,BOOL
+I7=micro870.micro870.prog1/mrnot_1.enable,0x444,BOOL
+I8=micro870.micro870.prog1/mrnot_1.or1,0x41E,BOOL
+I9=micro870.micro870.prog1/mror_1.enable,0x444,BOOL
+I10=micro870.micro870.prog1/mror_1.or1,0x41E,BOOL
+I11=micro870.micro870.prog1/mror_1.or2,0x41F,BOOL
+I12=micro870.micro870.prog1/mrxor_1.enable,0x444,BOOL
+I13=micro870.micro870.prog1/mrxor_1.xor1,0x41E,BOOL
+I14=micro870.micro870.prog1/mrxor_1.xor2,0x41F,BOOL
+I15=micro870.micro870.prog1/mrxnor_1.enable,0x444,BOOL
+I16=micro870.micro870.prog1/mrxnor_1.xnor1,0x41E,BOOL
+I17=micro870.micro870.prog1/mrxnor_1.xnor2,0x41F,BOOL
+I18=micro870.micro870.prog1/mrnand_1.enable,0x444,BOOL
+I19=micro870.micro870.prog1/mrnand_1.nand1,0x41E,BOOL
+I20=micro870.micro870.prog1/mrnand_1.nand2,0x41F,BOOL
+[END]

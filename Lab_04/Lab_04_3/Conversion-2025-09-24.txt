@@ -1,0 +1,15 @@
+---------- Controller change started: Lab_04_3 ----------
+
+---------- Importing Project : controller\Controller.acfproj ----------
+Changing controller type: 2080-L70E-24QWB (Version 23) to 2080-L70E-24QWBN (Version 23)
+
+Import Controller Complete -- 0 Errors, 0 Warnings
+
+---------- End of project conversion ----------
+
+The source project has been saved in 
+"\\nas01.itap.purdue.edu\puhome\My Documents\CCW\Lab_04_2\Lab_04_2.ccwsln"
+
+Log file has been written in
+\\nas01.itap.purdue.edu\puhome\my documents\ccw\lab_04_3\Conversion-2025-09-24.txt
+========== Controller Change: 1 succeeded, 0 failed ==========

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevicePreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Micro800ConnectionPath>X-DUDL4383S03W1!AB_ETHIP-1\192.168.103.1</Micro800ConnectionPath>
+  <RSLCPath>X-DUDL4383S03W1!AB_ETHIP-1\192.168.103.1</RSLCPath>
+  <FTLPath />
+</DevicePreferences>

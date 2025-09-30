@@ -1,0 +1,10 @@
+PROGRAM Lab_5_2
+redLight(_IO_EM_DI_00 AND NOT amberLight.Q,T#5s);
+greenLight(redLight.Q,T#5s);
+amberLight(greenLight.Q,T#1s);
+
+_IO_EM_DO_00:=redLight.redge 	AND NOT redLight.Q; 
+_IO_EM_DO_01:=greenLight.redge	AND NOT greenLight.Q; 
+_IO_EM_DO_02:=amberLight.redge 	AND NOT amberLight.Q; 
+
+END_PROGRAM

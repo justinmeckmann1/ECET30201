@@ -1,0 +1,16 @@
+FUNCTION_BLOCK Lab4_3_NAND
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*Enable*) (**)  
+ BST  XIO  [2,0] (*nand1*) (**)
+   NXB  XIO  [2,1] (*nand2*) (**)
+ BND
+  OTE  [3,0] (*Out*) (**)
+EOR [4,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK
