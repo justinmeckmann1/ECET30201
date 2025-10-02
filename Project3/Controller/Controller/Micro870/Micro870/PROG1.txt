@@ -1,0 +1,182 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := _IO_EM_DI_00 ;
+__EDTB2 := TOGGLE ;
+TOGGLE := (__EDTB1 OR __EDTB2) AND NOT(BREAK) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0001 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := NOT(_IO_EM_DI_00) ;
+__EDTB4 := ACTIVE ;
+ACTIVE := (__EDTB3 OR __EDTB4) AND TOGGLE ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0002 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := _IO_EM_DI_00 ;
+__EDTB6 := __EDTB5 AND ACTIVE ;
+__EDTB7 := __EDTB5 AND BREAK ;
+BREAK := (__EDTB6 OR __EDTB7) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0003 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : TOGGLE with __MEMO__1__TOGGLE *)
+__EDTB8 := (TOGGLE AND NOT(__MEMO__1__TOGGLE)) ;
+IF __EDTB8 THEN
+RANDOM := RAND(6) ;
+END_IF ;
+__MO_RAND_1 := __EDTB8 ;
+__EDTB9 := __EDTB8 ;
+IF __EDTB9 THEN
+TEMP := (  RANDOM) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB9 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0004 ;
+__MEMO__1__TOGGLE := TOGGLE ; (*Pulse detection on : TOGGLE with __MEMO__1__TOGGLE *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB11 := TOGGLE ;
+IF __EDTB11 THEN
+(* Operator output on : > with __EDTB10 *)
+__EDTB10 := (TEMP > 0) ;
+ELSE
+__EDTB10 := FALSE ;
+END_IF ;
+__MO_GREAT_1 := __EDTB10 ;
+(* FB call: TON *)
+TON_1(__EDTB10 AND NOT(TOF_1.Q), T#1S) ;
+(* FB call: TOF *)
+TOF_1(TON_1.Q, T#500MS) ;
+__EDTB12 := TOF_1.Q ;
+_IO_EM_DO_04 := __EDTB12 ;
+; (*Pulse detection on : TOF_1.Q with __MEMO__2__TOF_1_Q *)
+__EDTB13 := __EDTB12 AND (TOF_1.Q AND NOT(__MEMO__2__TOF_1_Q)) ;
+IF __EDTB13 THEN
+TEMP := (TEMP - 1) ;
+END_IF ;
+__MO_MINUS_1 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0005 ;
+__MEMO__2__TOF_1_Q := TOF_1.Q ; (*Pulse detection on : TOF_1.Q with __MEMO__2__TOF_1_Q *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,18
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: CTU *)
+CTU_1(TOGGLE AND NOT(_IO_EM_DI_01), RESET, 1000) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0006 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : TOGGLE with __MEMO__3__TOGGLE *)
+__EDTB15 := (__MEMO__3__TOGGLE AND NOT(TOGGLE)) ;
+__EDTB17 := __EDTB15 ;
+IF __EDTB17 THEN
+(* Operator output on : = with __EDTB16 *)
+__EDTB16 := (CTU_1.CV = RANDOM) ;
+ELSE
+__EDTB16 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB16 ;
+(* FB call: TOF *)
+TOF_2(__EDTB16, T#1S) ;
+_IO_EM_DO_02 := TOF_2.Q ;
+__EDTB19 := __EDTB15 ;
+IF __EDTB19 THEN
+(* Operator output on : <> with __EDTB18 *)
+__EDTB18 := (CTU_1.CV <> RANDOM) ;
+ELSE
+__EDTB18 := FALSE ;
+END_IF ;
+__MO_DIFF_1 := __EDTB18 ;
+(* FB call: TOF *)
+TOF_3(__EDTB18, T#1S) ;
+_IO_EM_DO_03 := TOF_3.Q ;
+RESET := __EDTB15 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0007 ;
+__MEMO__3__TOGGLE := TOGGLE ; (*Fall detection on  : TOGGLE with __MEMO__3__TOGGLE *)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __MEMO__1__TOGGLE *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __MEMO__2__TOF_1_Q *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __MEMO__3__TOGGLE *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+

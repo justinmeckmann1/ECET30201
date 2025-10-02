@@ -1,0 +1,13 @@
+[BEGIN FB INPUTS]
+I1=micro870.micro870.prog1/ctu_1.cu,0x1C05,BOOL
+I2=micro870.micro870.prog1/ctu_1.reset,0x44B,BOOL
+I3=micro870.micro870.prog1/ctu_1.pv,0x1C0C,DINT
+I4=micro870.micro870.prog1/tof_1.in,0x1C04,BOOL
+I5=micro870.micro870.prog1/tof_1.pt,0x1C28,TIME
+I6=micro870.micro870.prog1/tof_2.in,0x1C06,BOOL
+I7=micro870.micro870.prog1/tof_2.pt,0x1C24,TIME
+I8=micro870.micro870.prog1/tof_3.in,0x1C06,BOOL
+I9=micro870.micro870.prog1/tof_3.pt,0x1C24,TIME
+I10=micro870.micro870.prog1/ton_1.in,0x1C03,BOOL
+I11=micro870.micro870.prog1/ton_1.pt,0x1C24,TIME
+[END]
