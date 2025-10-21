@@ -1,0 +1,91 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: CTUD *)
+CTUD_1(_IO_EM_DI_00, COUNTDOWN, , , 100000000) ;
+COUNTER := CTUD_1.CV ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0001 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := HOLD ;
+IF __EDTB2 THEN
+(* Operator output on : < with __EDTB1 *)
+__EDTB1 := (0 < COUNTER) ;
+ELSE
+__EDTB1 := FALSE ;
+END_IF ;
+__MO_LESS_1 := __EDTB1 ;
+(* FB call: TON *)
+TON_1(__EDTB1 AND NOT(TON_1.Q), T#2S) ;
+(* FB call: TOF *)
+TOF_1(TON_1.Q, T#1S) ;
+__EDTB3 := TOF_1.Q ;
+COUNTDOWN := __EDTB3 ;
+_IO_EM_DO_00 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0002 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,11
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
+(* Operator output on : < with __EDTB4 *)
+__EDTB4 := (0 < COUNTER) ;
+ELSE
+__EDTB4 := FALSE ;
+END_IF ;
+__MO_LESS_2 := __EDTB4 ;
+__EDTB6 := __EDTB4 AND HOLD ;
+__EDTB7 := _IO_EM_DI_01 ;
+HOLD := (__EDTB6 OR __EDTB7) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0003 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+
+(*************** Code for the end of Rung **************)
+__GL __LG0004 ;
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+

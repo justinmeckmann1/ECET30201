@@ -1,0 +1,41 @@
+PROGRAM Lab05_3
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*_IO_EM_DI_00*) (**)  FB  [2,0] (*CTUD*) (*CTUD_1*) ( (*CU:CU*)(**) (**)  , (*CD:CD*)(*countDown*) (**)  , (*RESET:RESE*)(**) (**)  , (*LOAD:LOAD*)(**) (**)  , (*PV:PV*)(*100000000*) (**) ; (*QU:QU*)(**) (**)  , (*QD:QD*)(**) (**)  , (*CV:CV*)(*counter*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  XIC  [1,0] (*hold*) (**)  FB  [2,0] (*<*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**)  , (*i2:*)(*counter*) (**) ; (*o1:*)(**) (**) )  XIO  [5,0] (*TON_1.Q*) (*Q*)  FB  [6,0] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#2s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  FB  [9,0] (*TOF*) (*TOF_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#1s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
+ BST  OTE  [12,0] (*countDown*) (**)
+   NXB  OTE  [12,1] (*_IO_EM_DO_00*) (**)
+ BND
+
+EOR [13,0]
+
+
+(**)
+
+SOR  [0,11] (**) (**)  
+ BST  FB  [1,0] (*<*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**)  , (*i2:*)(*counter*) (**) ; (*o1:*)(**) (**) )  XIC  [4,0] (*hold*) (**)
+   NXB  XIC  [1,3] (*_IO_EM_DI_01*) (**)
+ BND
+  OTE  [5,0] (*hold*) (**)
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)
+EOR [1,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=1
+#end_info
+END_PROGRAM
