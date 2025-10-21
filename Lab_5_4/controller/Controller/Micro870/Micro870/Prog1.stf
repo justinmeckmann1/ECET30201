@@ -1,0 +1,17 @@
+PROGRAM Prog1
+CTUD_1(_IO_EM_DI_00,countDown,,,1000000000);
+Start:=(_IO_EM_DI_01);
+
+//hold AND IF 0<CTUD_1.CV AND NOT TON_1.Q
+
+TON_1(hold AND 0<CTUD_1.CV AND NOT TON_1.Q, T#2s);
+TOF_1(TON_1.Q,T#1s);
+
+_IO_EM_DO_00:=TOF_1.Q;
+countDown:=TOF_1.Q;
+
+hold:=  Start OR (0<CTUD_1.CV AND hold);
+
+// counter: CTUD_1.CV
+
+END_PROGRAM
