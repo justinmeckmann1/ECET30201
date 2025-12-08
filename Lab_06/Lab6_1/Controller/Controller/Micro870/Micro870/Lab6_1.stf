@@ -1,0 +1,37 @@
+PROGRAM Lab6_1
+IF NOT _IO_EM_DI_00 THEN
+	pressed := FALSE;
+END_IF;
+
+IF _IO_EM_DI_00 THEN
+	IF NOT pressed THEN
+    	count := count + 1;
+	END_IF;
+	pressed := TRUE;
+END_IF;
+
+IF NOT _IO_EM_DI_01 THEN
+	pressed_01 := FALSE;
+END_IF;
+
+
+IF _IO_EM_DI_01 THEN
+	IF NOT pressed_01 THEN
+
+		fact:= 1;
+		
+		
+		FOR i := 1 TO count DO 
+			fact:= fact * i;
+		END_FOR;
+		
+		duration := ANY_TO_TIME(fact);
+
+		count:= 0;
+	END_IF;
+	pressed_01 := TRUE;
+END_IF;
+
+timer(pressed_01,duration);
+_IO_EM_DO_00 := timer.Q;
+END_PROGRAM

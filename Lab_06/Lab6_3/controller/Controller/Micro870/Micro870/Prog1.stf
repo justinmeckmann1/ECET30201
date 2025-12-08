@@ -1,0 +1,68 @@
+PROGRAM Prog1
+red(_IO_EM_DI_00);
+green(_IO_EM_DI_02);
+yellow(_IO_EM_DI_01);
+
+IF red.Q THEN 
+	state:= (state + 1);
+	IF state > 4 THEN
+		state:= 0;
+	END_IF;
+ELSIF green.Q THEN
+	state:= (state - 1);
+	IF state < 0 THEN
+		state:= 4;
+	END_IF;
+ELSIF yellow.Q THEN
+	state:= 10;
+END_IF;
+
+timer(yellow.Q,T#1s);
+
+
+
+CASE state OF
+	0: 
+		_IO_EM_DO_00:= TRUE;
+		_IO_EM_DO_01:= FALSE;
+		_IO_EM_DO_02:= FALSE;
+		_IO_EM_DO_03:= FALSE;
+		_IO_EM_DO_04:= FALSE;
+	1: 
+		_IO_EM_DO_00:= FALSE;
+		_IO_EM_DO_01:= TRUE;
+		_IO_EM_DO_02:= FALSE;
+		_IO_EM_DO_03:= FALSE;
+		_IO_EM_DO_04:= FALSE;
+	2: 
+		_IO_EM_DO_00:= FALSE;
+		_IO_EM_DO_01:= FALSE;
+		_IO_EM_DO_02:= TRUE;
+		_IO_EM_DO_03:= FALSE;
+		_IO_EM_DO_04:= FALSE;
+	3: 
+		_IO_EM_DO_00:= FALSE;
+		_IO_EM_DO_01:= FALSE;
+		_IO_EM_DO_02:= FALSE;
+		_IO_EM_DO_03:= TRUE;
+		_IO_EM_DO_04:= FALSE;
+	4: 
+		_IO_EM_DO_00:= FALSE;
+		_IO_EM_DO_01:= FALSE;
+		_IO_EM_DO_02:= FALSE;
+		_IO_EM_DO_03:= FALSE;
+		_IO_EM_DO_04:= TRUE;
+	10:
+		_IO_EM_DO_00:= timer.Q;
+		_IO_EM_DO_01:= timer.Q;
+		_IO_EM_DO_02:= timer.Q;
+		_IO_EM_DO_03:= timer.Q;
+		_IO_EM_DO_04:= timer.Q;
+		
+		IF NOT timer.Q THEN
+			state:= 0;
+		END_IF;
+	
+END_CASE;
+
+END_PROGRAM

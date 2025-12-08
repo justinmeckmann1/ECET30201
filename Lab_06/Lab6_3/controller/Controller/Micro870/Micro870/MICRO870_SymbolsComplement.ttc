@@ -1,0 +1,7 @@
+[BEGIN FB INPUTS]
+I1=micro870.micro870.prog1/timer.in,0x1B99,BOOL
+I2=micro870.micro870.prog1/timer.pt,0x1BC4,TIME
+I3=micro870.micro870.prog1/red.clk,0x41E,BOOL
+I4=micro870.micro870.prog1/green.clk,0x420,BOOL
+I5=micro870.micro870.prog1/yellow.clk,0x41F,BOOL
+[END]

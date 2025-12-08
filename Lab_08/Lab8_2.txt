@@ -1,0 +1,70 @@
+// RisingEdge:= R_TRIG
+// RisingEdge(CLK:= IOHub:I.Data.0)
+
+// JSR()
+
+
+// rising edge helper
+if not IOHub:I.Data.0 then 
+	enabled_0:= 1;
+end_if;
+
+if not IOHub:I.Data.2 then 
+	enabled_2:= 1;
+end_if;
+
+/*
+if not IOHub:I.Data.4 then 
+	enabled_4:= 1;
+end_if;
+
+if not IOHub:I.Data.2 and not IOHub:I.Data.4 then 
+	enabled_2_4:= 1;
+end_if;
+
+*/
+
+// get shift value 
+if IOHub:I.Data.0 then
+	if enabled_0 then
+		shift:= shift + 1;
+		enabled_0:= 0;
+	end_if;
+end_if;
+
+// load
+if IOHub:I.Data.2 then
+	if enabled_2 then
+		for i:= 0 to MrString.LEN by 1 do
+			MrArray[i]:= MrString.DATA[i];
+		end_for;
+		enabled_2:= 0;
+	end_if;
+end_if;
+
+// shift (encryption)
+if IOHub:I.Data.4 then
+	if not encrypted then
+		shifted:= 1;
+		for i:= 0 to MrString.LEN by 1 do
+			MrArray[i]:= MrArray[i] + shift;
+		end_for;
+		encrypted:= 1;
+	end_if;
+end_if;
+
+// decryption
+if IOHub:I.Data.2 and IOHub:I.Data.4 then
+	if encrypted then
+		for i:= 0 to MrString.LEN by 1 do
+			MrArray[i]:= MrArray[i] - shift;
+		end_for;
+		encrypted:= 0;
+	end_if;
+end_if;
+
+
+
+
+
+

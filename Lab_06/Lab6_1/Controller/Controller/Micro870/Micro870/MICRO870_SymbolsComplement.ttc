@@ -1,0 +1,7 @@
+[BEGIN FB INPUTS]
+I1=micro870.micro870.lab6_1/timer.in,0x449,BOOL
+I2=micro870.micro870.lab6_1/timer.pt,0x460,TIME
+I3=micro870.micro870.prog1/tof_1.in,0x444,BOOL
+I4=micro870.micro870.lab6_1/redbtn.clk,0x1BB8,BOOL
+I5=micro870.micro870.prog1/tof_1.pt,0x1BBC,TIME
+[END]

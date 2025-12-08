@@ -1,0 +1,74 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(*Label_1*)
+__GL __LG0001 ;
+__EDTB1 := _IO_EM_DI_01 ;
+__LD_JMP_INDEX := 0;
+IF __EDTB1 THEN
+(*GOTO Label_2*)
+__LD_JMP_INDEX := 1;
+__GJ __LG0002 ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0002 ;
+
+IF __LD_JMP_INDEX = 1 THEN
+__LD_JMP_INDEX := 0 ;
+__GJ __LG0005 ;
+END_IF ;
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,3
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: CTUD *)
+CTUD_1(_IO_EM_DI_02, , RED_AND_GREEN, , 99999) ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0003 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,9
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+RED_AND_GREEN := _IO_EM_DI_00 AND _IO_EM_DI_02 ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0004 ;
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,11
+__ENDSTEPPRAGMA
+(*Label :*)(*Label_2*)
+__GL __LG0005 ;
+_IO_EM_DO_00 := TRUE ;
+
+(*************** Code for the end of Rung **************)
+__GL __LG0006 ;
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __LD_JMP_INDEX *)
+

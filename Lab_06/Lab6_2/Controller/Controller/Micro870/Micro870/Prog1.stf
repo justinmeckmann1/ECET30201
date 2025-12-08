@@ -1,0 +1,30 @@
+PROGRAM Prog1
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (*Label_1*) (**)  XIC  [1,0] (*_IO_EM_DI_01*) (*yellow*)  JMP [2,0] (*Label_2*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,3] (**) (**)  XIC  [1,0] (*_IO_EM_DI_02*) (*green*)  FB  [2,0] (*CTUD*) (*CTUD_1*) ( (*CU:CU*)(**) (**)  , (*CD:CD*)(**) (**)  , (*RESET:RESE*)(*red_and_green*) (**)  , (*LOAD:LOAD*)(**) (**)  , (*PV:PV*)(*99999*) (**) ; (*QU:QU*)(**) (**)  , (*QD:QD*)(**) (**)  , (*CV:CV*)(**) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  XIC  [1,0] (*_IO_EM_DI_00*) (*red*)  XIC  [2,0] (*_IO_EM_DI_02*) (*green*)  OTE  [3,0] (*red_and_green*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,11] (*Label_2*) (**)  OTE  [1,0] (*_IO_EM_DO_00*) (**)
+EOR [2,0]
+EOF
+#end_info
+END_PROGRAM
