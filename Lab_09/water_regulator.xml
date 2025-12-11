@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2025.9" productRelease="ff67fda8fb4c59b32e743be9caf19f07101e017e">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="Lab10_4" version="1.0" creationDateTime="2025-12-10T18:08:58" modificationDateTime="2025-12-10T22:14:30">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <FunctionBlock name="water_regulator">
+        <AddData>
+          <Data name="pouData" handleUnknown="preserve">
+            <PouData>
+              <ContentNode name="Metadata.meta" nodeType="MetadataDocument" displayName="Metadata">
+                <Xml xmlns="">
+                  <Metadata>
+                    <FolderType>PouFolder</FolderType>
+                    <ContentType>FunctionBlock</ContentType>
+                    <Kind>FunctionBlock</Kind>
+                    <Usings></Usings>
+                    <Id>cc926df0-4c74-4063-ba08-c25dfc0ecbdb</Id>
+                    <ItemGroup>
+                      <VariableWorksheet>
+                        <Id>93f0b301-ca75-4417-b11e-2a40279165ca</Id>
+                      </VariableWorksheet>
+                      <CodeWorksheet Include="Code.ld">
+                        <Id>2bb46dbd-113c-4db3-903c-f8a6794493aa</Id>
+                        <Extension>.ld</Extension>
+                        <Type>.ld</Type>
+                        <ParentIndex>0</ParentIndex>
+                      </CodeWorksheet>
+                    </ItemGroup>
+                  </Metadata>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="VersionHistory.usermeta" nodeType="UserMetadata" displayName="Description">
+                <Xml xmlns="">
+                  <UserMetadataDoc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <UserMetadata Id="1be191c1-76d1-44d4-a578-3f9a61ddabac" xmlns="">
+                      <dcec>
+                        <dc:identifier></dc:identifier>
+                        <dc:title></dc:title>
+                      </dcec>
+                      <revTable />
+                      <DescriptionCollection>
+                        <Description relativePath=".\Description.html" format="HTML" />
+                        <Description relativePath=".\Description.rtf" format="RTF" />
+                      </DescriptionCollection>
+                    </UserMetadata>
+                  </UserMetadataDoc>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Description.html" nodeType="UserMetadataDescription" displayName="Description.html" />
+              <ContentNode name="Resources.locreslst" nodeType="LocalResourcesListDocument" displayName="Resources" />
+              <ContentNode name="Variables.var.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="User.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <IsUser>true</IsUser>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Code.ld.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <NextResourceID>101</NextResourceID>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <VariableGroup name="" id="f185d2ae-a22b-4a0b-9d50-233822c537cd" />
+            </PouData>
+          </Data>
+        </AddData>
+        <Parameters>
+          <InputVars>
+            <Variable name="sensor_value" orderWithinParamSet="0">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>a9bdd655-a2c1-4706-a63a-aa2a93d1f724</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f185d2ae-a22b-4a0b-9d50-233822c537cd'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>DINT</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="threshold" orderWithinParamSet="1">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>5ea671a1-9a7f-40f9-9900-e65b6d49cd0c</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f185d2ae-a22b-4a0b-9d50-233822c537cd'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>DINT</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="DINT#70" />
+              </InitialValue>
+            </Variable>
+          </InputVars>
+          <OutputVars>
+            <Variable name="water" orderWithinParamSet="2">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>e320bfa7-9031-4c1e-835e-b205a3a59463</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f185d2ae-a22b-4a0b-9d50-233822c537cd'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+          </OutputVars>
+        </Parameters>
+        <MainBody>
+          <AddData xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Code</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="docInformation" handleUnknown="preserve">
+              <docInformation gridActive="true" pageWidth="-1">
+                <version>2.8.3.14.0:A1.9</version>
+              </docInformation>
+            </Data>
+          </AddData>
+          <BodyContent xsi:type="LD" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+            <Rung evaluationOrder="1">
+              <RelPosition x="6" y="20" />
+              <FbdObject xsi:type="DataSource" globalId="ID_water_regulator_Code_2" identifier="sensor_value">
+                <AddData>
+                  <Data name="objectInformation" handleUnknown="preserve">
+                    <objectInformation networkId="2" subNetworkId="0" executionOrder="1" />
+                  </Data>
+                </AddData>
+                <RelPosition x="0" y="4" />
+                <Size x="13" y="4" />
+                <ConnectionPointOut connectionPointOutId="20001">
+                  <RelPosition x="13" y="2" />
+                </ConnectionPointOut>
+              </FbdObject>
+              <FbdObject xsi:type="DataSource" globalId="ID_water_regulator_Code_8" identifier="threshold">
+                <AddData>
+                  <Data name="objectInformation" handleUnknown="preserve">
+                    <objectInformation networkId="2" subNetworkId="0" executionOrder="2" />
+                  </Data>
+                </AddData>
+                <RelPosition x="45" y="8" />
+                <Size x="8" y="4" />
+                <ConnectionPointOut connectionPointOutId="80001">
+                  <RelPosition x="8" y="2" />
+                </ConnectionPointOut>
+              </FbdObject>
+              <FbdObject xsi:type="Block" globalId="ID_water_regulator_Code_9" typeName="LE">
+                <AddData>
+                  <Data name="objectInformation" handleUnknown="preserve">
+                    <objectInformation networkId="2" subNetworkId="0" executionOrder="3" />
+                  </Data>
+                  <Data name="blockInformation" handleUnknown="preserve">
+                    <blockInformation canEditLabel="false" extensible="false" imageWidth="8" imageHeight="0" />
+                  </Data>
+                </AddData>
+                <RelPosition x="55" y="0" />
+                <Size x="8" y="12" />
+                <InOutVariables />
+                <InputVariables>
+                  <InputVariable parameterName="IN1" suppressName="true">
+                    <AddData>
+                      <Data name="parameterInformation" handleUnknown="preserve">
+                        <parameterInformation localId="10" executionOrderId="3" editorParameter="false" priority="1" />
+                      </Data>
+                    </AddData>
+                    <ConnectionPointIn>
+                      <RelPosition x="0" y="6" />
+                      <Connection refConnectionPointOutId="20001">
+                        <AddData>
+                          <Data name="connectionInformation" handleUnknown="preserve">
+                            <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+                          </Data>
+                        </AddData>
+                      </Connection>
+                    </ConnectionPointIn>
+                  </InputVariable>
+                  <InputVariable parameterName="IN2" suppressName="true">
+                    <AddData>
+                      <Data name="parameterInformation" handleUnknown="preserve">
+                        <parameterInformation localId="11" executionOrderId="3" editorParameter="false" priority="2" />
+                      </Data>
+                    </AddData>
+                    <ConnectionPointIn>
+                      <RelPosition x="0" y="10" />
+                      <Connection refConnectionPointOutId="80001">
+                        <AddData>
+                          <Data name="connectionInformation" handleUnknown="preserve">
+                            <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+                          </Data>
+                        </AddData>
+                      </Connection>
+                    </ConnectionPointIn>
+                  </InputVariable>
+                </InputVariables>
+                <OutputVariables>
+                  <OutputVariable parameterName="LE" suppressName="true">
+                    <AddData>
+                      <Data name="parameterInformation" handleUnknown="preserve">
+                        <parameterInformation localId="12" executionOrderId="3" negatable="true" editorParameter="false" priority="3" />
+                      </Data>
+                    </AddData>
+                    <ConnectionPointOut connectionPointOutId="0">
+                      <RelPosition x="8" y="6" />
+                    </ConnectionPointOut>
+                  </OutputVariable>
+                </OutputVariables>
+              </FbdObject>
+              <FbdObject xsi:type="DataSink" globalId="ID_water_regulator_Code_13" identifier="water">
+                <AddData>
+                  <Data name="objectInformation" handleUnknown="preserve">
+                    <objectInformation networkId="2" subNetworkId="0" executionOrder="4" />
+                  </Data>
+                </AddData>
+                <RelPosition x="70" y="4" />
+                <Size x="8" y="4" />
+                <ConnectionPointIn>
+                  <RelPosition x="0" y="2" />
+                  <Connection refConnectionPointOutId="120001">
+                    <AddData>
+                      <Data name="connectionInformation" handleUnknown="preserve">
+                        <connectionInformation useAutoConnector="false" useUserConnector="false" implicitMultiRouted="false" invisible="false" wasExplicitFeedback="false" />
+                      </Data>
+                    </AddData>
+                  </Connection>
+                </ConnectionPointIn>
+              </FbdObject>
+            </Rung>
+          </BodyContent>
+        </MainBody>
+      </FunctionBlock>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>
